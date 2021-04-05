@@ -57,8 +57,8 @@ class App extends Component {
       <div className="App">
         <Particles className="particles" params={particlesOptions} />
 
-        <Router>
-          <Route exact path="/">
+        <Router basename="/app">
+          <Route path="/" exact>
             <Signin />
           </Route>
 
