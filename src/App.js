@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Clarifai from "clarifai";
 import Particles from "react-particles-js";
 import Signin from "./components/Signin/Signin";
@@ -57,7 +57,7 @@ class App extends Component {
       <div className="App">
         <Particles className="particles" params={particlesOptions} />
 
-        <Router basename="/app">
+        <Router basename={process.env.PUBLIC_URL}>
           <Route path="/" exact>
             <Signin />
           </Route>
