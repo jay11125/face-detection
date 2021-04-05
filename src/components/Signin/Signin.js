@@ -10,7 +10,7 @@ const Signin = () => {
           justifyContent: "flex-end",
         }}
       >
-        <Link exact to="/register">
+        <Link to="/register">
           <p className="f3 link dim black underline pa3 pointer">Register</p>
         </Link>
       </nav>
