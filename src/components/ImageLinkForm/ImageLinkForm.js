@@ -1,12 +1,26 @@
 import React from "react";
 import "./ImageLinkForm.css";
 
-const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
+const ImageLinkForm = ({ onInputChange, onButtonSubmit, array }) => {
   return (
     <div>
-      <p className="f3 bold">
-        {"This Magic Brain will detect faces in your pictures. Give it a try."}
-      </p>
+      {array ? (
+        array.length !== 0 ? (
+          <p className="f3 bold">
+            {array.length +
+              " faces detected! Explore more with other image urls :)"}{" "}
+          </p>
+        ) : (
+          <p className="f3 bold">
+            {"Enter an image url below to detect faces :)"}
+          </p>
+        )
+      ) : (
+        <p className="f3 bold">
+          {"Zero faces detected...Please try another image url :("}
+        </p>
+      )}
+
       <div className="center">
         <div className="form center pa4 br3 shadow-5">
           <input

@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Clarifai from "clarifai";
 import Particles from "react-particles-js";
 import Signin from "./components/Signin/Signin";
 import Navigation from "./components/Navigation/Navigation";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
-import Logo from "./components/Logo/Logo";
-import Rank from "./components/Rank/Rank";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Register from "./components/Register/Register";
 
@@ -18,10 +16,10 @@ const app = new Clarifai.App({
 const particlesOptions = {
   particles: {
     number: {
-      value: 70,
+      value: 90,
       density: {
         enable: true,
-        value_area: 800,
+        value_area: 900,
       },
     },
   },
@@ -57,8 +55,8 @@ class App extends Component {
       <div className="App">
         <Particles className="particles" params={particlesOptions} />
 
-        <Router>
-          <Route exact path="/">
+        <Router basename={process.env.PUBLIC_URL}>
+          <Route path="/" exact>
             <Signin />
           </Route>
 
@@ -68,9 +66,9 @@ class App extends Component {
 
           <Route path="/main">
             <Navigation />
-            <Logo />
-            <Rank />
+
             <ImageLinkForm
+              array={this.state.array}
               onInputChange={this.onInputChange}
               onButtonSubmit={this.onButtonSubmit}
             />
