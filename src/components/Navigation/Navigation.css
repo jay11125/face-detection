@@ -1,4 +1,9 @@
 .container {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: center;
+}
+.header {
+	margin-right: 100px;
+	min-width: 75vw;
+	justify-self: flex-end;
 }

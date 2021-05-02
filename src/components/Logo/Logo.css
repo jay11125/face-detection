@@ -1,12 +1,23 @@
 .Tilt {
-  margin-top: 25px;
-  background: linear-gradient(89deg, #ff5edf 0%, #04c8de 100%);
+	margin-top: 25px;
+	background: linear-gradient(89deg, #ff5edf 0%, #04c8de 100%);
 }
 .container {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 img {
-  min-height: 100;
+	min-height: 100;
+}
+.demo {
+	display: none;
+}
+@media (max-width: 768px) {
+	.demo {
+		display: block;
+	}
+	.demo1 {
+		display: none;
+	}
 }
